@@ -37,7 +37,7 @@
   "web_log_server": "https://minnraiserver.vercel.app",
   "login_failed_count": 2,
   "test_url": "",
-  "core_url": "ffp.springmusk.dev",
+  "core_url": "minnraiserver.vercel.app",
   "core_ip_list": [
     "0.0.0.0"
   ],
@@ -49,6 +49,6 @@
   "gamevar": "var_name,comment,var_type,var_value\nvar_name,comment,\"var_type float, int, bool\",var_value\nFFAntihackDisabledRegions,关闭MTP的地区,string,\"IND,BD,NA\"\nFFAntihackDisabledClientVariant,FFAntihackDisabledClientVariant,string,\"ClientUsingVersion_MAX_HPE,ClientUsingVersion_FFI,ClientUsingVersion_NORMAL,ClientUsingVersion_MAX|IND,ClientUsingVersion_MAX|BD,ClientUsingVersion_NORMAL|BD\"\nEnableMtpLiteDataRegion,mtp轻特征开关,string,\"BR,EUROPE,ID,ME,US,RU,SAC,SG,TH,TW,VN,PK,ZA\"\nFFAntihackEmulatorCheckDisbaledClientVariant,FFAntihackEmulatorCheckDisbaledClientVariant,string,\"ClientUsingVersion_FFI,ClientUsingVersion_MAX,ClientUsingVersion_NORMAL\"\nForceTutorial_ChangeHudABTest,fps流程中打开hud选择界面的概率,float,-1\n",
   "remote_option_version": "optionallocres:50|optionalavatarres:708|optionalclothres:1150|optionalfootballres:47|optionalfullscreencgres:334|optionalhuntinggroundres:178|optionalinfection:121|optionalingameres:469|optionallobbyres:610|optionallonewolfres:77|optionallonewolfstrikeoutres:23|optionalludores:40|optionalmap1res:385|optionalmap2res:125|optionalmap4res:110|optionalmaphippores:90|optionalmapres:340|optionalnewblast:138|optionalpetres:848|optionalrushb:123|optionalrushingpetsres:88|optionalsnowduelres:59|optionaltrainingres:83|optionalugcres:537|optionalvoiceres:355|optionalwerewolves:173|optionalmapponyres:200|optionalsocialres:111|optionalwerunres:83|optionalugcoldparadiseres:32|optionalmultiregionres:25",
   "remote_option_version_astc": "optionallocres:50|optionalavatarres:711|optionalclothres:1150|optionalfootballres:38|optionalfullscreencgres:318|optionalhuntinggroundres:178|optionalinfection:116|optionalingameres:438|optionallobbyres:593|optionallonewolfres:139|optionallonewolfstrikeoutres:96|optionalludores:144|optionalmap1res:385|optionalmap2res:159|optionalmap4res:144|optionalmaphippores:92|optionalmapres:374|optionalnewblast:138|optionalpetres:848|optionalrushb:227|optionalrushingpetsres:192|optionalsnowduelres:59|optionaltrainingres:79|optionalugcres:507|optionalvoiceres:388|optionalwerewolves:277|optionalmapponyres:200|optionalsocialres:106|optionalwerunres:74|optionalugcoldparadiseres:32|optionalmultiregionres:26",
-  "ggp_url": "ffp.springmusk.dev",
+  "ggp_url": "minnraiserver.vercel.app",
   "show_high_framerate_UI": true
 }
