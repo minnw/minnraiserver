@@ -14,7 +14,7 @@
   "space_required_in_GB": 1.48,
   "should_check_ab_load": false,
   "force_refresh_restype": "optionalavatarres",
-  "remote_version": "1.128.16",
+  "remote_version": "2.127.16",
   "server_url": "https://loginbp.ggpolarbear.com/",
   "is_review_server": false,
   "use_login_optional_download": true,
@@ -35,6 +35,7 @@
   "need_check_ip_list": [],
   "network_log_server": "https://sgnetwork.ggblueshark.com/",
   "web_log_server": "https://networkselftest.ff.garena.com/api/",
+  "login_failed_count": 2,
   "test_url": "",
   "core_url": "csoversea.castle.freefiremobile.com",
   "core_ip_list": [
@@ -52,5 +53,5 @@
   "gamevar": "var_name,comment,var_type,var_value,var_region,var_platform\nvar_name,comment,var_type,var_value,var_region,var_platform\nEnableVariableFFVoiceIDC,EnableVariableFFVoiceIDC,bool,false,,\nEnableYieldMutexDuringAsyncLoad,EnableYieldMutexDuringAsyncLoad,bool,false,,\nNinthProgressLoadingDuration,NinthProgressLoadingDuration,float,0,,\nEnableUGCScrollViewCulling,EnableUGCScrollViewCulling,bool,false,,\nReservedInt01,ReservedInt01,int,5,,\nNinthLevelPortalRadius,NinthLevelPortalRadius,float,20,,\nEnable2018ABstreamed,Enable2018ABstreamed,bool,false,,ios\nEnableAsyncCullResultsRelease,EnableAsyncCullResultsRelease,bool,false,,ios\nReservedInt02,ReservedInt02,int,30,,\nEnableGraphicsJobs,EnableGraphicsJobs,bool,true,,\nGraphicsJobsSyncPointValue,GraphicsJobsSyncPointValue,int,1,,\nHackEpicClothesToMaxLevel,HackEpicClothesToMaxLevel,bool,true,,\nEnableReportSystemTimeDelta,EnableReportSystemTimeDelta,bool,false,,",
   "remote_option_version": "optionallocres:50|optionalavatarres:791|optionalclothres:1228|optionalfootballres:27|optionalfullscreencgres:319|optionalhuntinggroundres:246|optionalinfection:125|optionalingameres:503|optionallobbyres:640|optionallonewolfres:86|optionallonewolfstrikeoutres:59|optionalludores:42|optionalmap1res:385|optionalmap2res:156|optionalmap4res:139|optionalmaphippores:118|optionalmapres:357|optionalnewblast:163|optionalpetres:910|optionalrushb:108|optionalrushingpetsres:84|optionalsnowduelres:65|optionalsocialres:223|optionaltrainingres:297|optionalugcres:844|optionalvoiceres:344|optionalwerewolves:153|optionalwerunres:92|optionalmapponyres:204|optionalugcoldparadiseres:34|optionalmultiregionres:29",
   "remote_option_version_astc": "optionallocres:50|optionalavatarres:753|optionalclothres:1228|optionalfootballres:29|optionalfullscreencgres:306|optionalhuntinggroundres:216|optionalinfection:124|optionalingameres:461|optionallobbyres:640|optionallonewolfres:206|optionallonewolfstrikeoutres:155|optionalludores:175|optionalmap1res:385|optionalmap2res:192|optionalmap4res:175|optionalmaphippores:120|optionalmapres:391|optionalnewblast:162|optionalpetres:910|optionalrushb:241|optionalrushingpetsres:217|optionalsnowduelres:65|optionalsocialres:215|optionaltrainingres:267|optionalugcres:786|optionalvoiceres:379|optionalwerewolves:286|optionalwerunres:81|optionalmapponyres:204|optionalugcoldparadiseres:33|optionalmultiregionres:27",
-  "ggp_url": "gin.freefiremobile.com"
+  "ggp_url": "gin.freefiremobile.com",
 }
