@@ -1,5 +1,5 @@
 {
-  "code": 2,
+  "code": 0,
   "is_server_open": true,
   "is_firewall_open": false,
   "cdn_url": "https://dl.cdn.freefiremobile.com/live/ABHotUpdates/",
