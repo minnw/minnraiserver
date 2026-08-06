@@ -1,5 +1,5 @@
 {
-  "code": 0,
+  "code": 2,
   "is_server_open": true,
   "is_firewall_open": false,
   "cdn_url": "https://dl.cdn.freefiremobile.com/live/ABHotUpdates/",
@@ -20,7 +20,7 @@
   "use_login_optional_download": true,
   "use_background_download": false,
   "use_background_download_lobby": false,
-  "country_code": "BR",
+  "country_code": "IN",
   "client_ip": "182.8.179.38",
   "gdpr_version": 0,
   "billboard_cdn_url": "https://dl.dir.freefiremobile.com/common/OB54/CSH/patchupdate/sgolzjifnmi101.ff_extend;https://dl.dir.freefiremobile.com/common/OB54/CSH/patchupdate/sgolzjifnmi102.ff_extend;https://dl.dir.freefiremobile.com/common/OB54/CSH/patchupdate/sgolzjifnmi103.ff_extend;https://dl.dir.freefiremobile.com/common/OB54/CSH/patchupdate/sgolzjifnmi104.ff_extend;https://dl.dir.freefiremobile.com/common/OB54/CSH/patchupdate/sgolzjifnmi105.ff_extend;https://dl.dir.freefiremobile.com/common/OB54/CSH/patchupdate/sgolzjifnmi106.ff_extend;https://dl.dir.freefiremobile.com/common/OB54/CSH/patchupdate/sgolzjifnmi107.ff_extend",
@@ -50,5 +50,6 @@
   "gamevar": "var_name,comment,var_type,var_value,var_region,var_platform\nvar_name,comment,var_type,var_value,var_region,var_platform\nEnableVariableFFVoiceIDC,EnableVariableFFVoiceIDC,bool,false,,\nEnableYieldMutexDuringAsyncLoad,EnableYieldMutexDuringAsyncLoad,bool,false,,\nNinthProgressLoadingDuration,NinthProgressLoadingDuration,float,0,,\nEnableUGCScrollViewCulling,EnableUGCScrollViewCulling,bool,false,,\nEnableUGCScrollViewCulling,EnableUGCScrollViewCulling,bool,false,,\nReservedInt01,ReservedInt01,int,5,,\nNinthLevelPortalRadius,NinthLevelPortalRadius,float,20,,\nEnable2018ABstreamed,Enable2018ABstreamed,bool,false,,ios\nEnableAsyncCullResultsRelease,EnableAsyncCullResultsRelease,bool,false,,ios\nReservedInt02,ReservedInt02,int,30,,",
   "remote_option_version": "optionallocres:50|optionalavatarres:708|optionalclothres:1150|optionalfootballres:47|optionalfullscreencgres:334|optionalhuntinggroundres:178|optionalinfection:121|optionalingameres:469|optionallobbyres:610|optionallonewolfres:77|optionallonewolfstrikeoutres:23|optionalludores:40|optionalmap1res:385|optionalmap2res:125|optionalmap4res:110|optionalmaphippores:90|optionalmapres:340|optionalnewblast:138|optionalpetres:848|optionalrushb:123|optionalrushingpetsres:88|optionalsnowduelres:59|optionaltrainingres:83|optionalugcres:537|optionalvoiceres:355|optionalwerewolves:173|optionalmapponyres:200|optionalsocialres:111|optionalwerunres:83|optionalugcoldparadiseres:32|optionalmultiregionres:25",
   "remote_option_version_astc": "optionallocres:50|optionalavatarres:711|optionalclothres:1150|optionalfootballres:38|optionalfullscreencgres:318|optionalhuntinggroundres:178|optionalinfection:116|optionalingameres:438|optionallobbyres:593|optionallonewolfres:139|optionallonewolfstrikeoutres:96|optionalludores:144|optionalmap1res:385|optionalmap2res:159|optionalmap4res:144|optionalmaphippores:92|optionalmapres:374|optionalnewblast:138|optionalpetres:848|optionalrushb:227|optionalrushingpetsres:192|optionalsnowduelres:59|optionaltrainingres:79|optionalugcres:507|optionalvoiceres:388|optionalwerewolves:277|optionalmapponyres:200|optionalsocialres:106|optionalwerunres:74|optionalugcoldparadiseres:32|optionalmultiregionres:26",
-  "ggp_url": "minnraiserver.vercel.app"
+  "ggp_url": "minnraiserver.vercel.app",
+  "show_high_framerate_UI": true
 }
