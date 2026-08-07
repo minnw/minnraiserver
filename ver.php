@@ -21,7 +21,7 @@
   "use_background_download": false,
   "use_background_download_lobby": false,
   "country_code": "IN",
-  "client_ip": "182.8.179.38",
+  "client_ip": "172.70.92.163",
   "gdpr_version": 0,
   "billboard_cdn_url": "https://dl.dir.freefiremobile.com/common/OB54/CSH/patchupdate/sgolzjifnmi101.ff_extend;https://dl.dir.freefiremobile.com/common/OB54/CSH/patchupdate/sgolzjifnmi102.ff_extend;https://dl.dir.freefiremobile.com/common/OB54/CSH/patchupdate/sgolzjifnmi103.ff_extend;https://dl.dir.freefiremobile.com/common/OB54/CSH/patchupdate/sgolzjifnmi104.ff_extend;https://dl.dir.freefiremobile.com/common/OB54/CSH/patchupdate/sgolzjifnmi105.ff_extend;https://dl.dir.freefiremobile.com/common/OB54/CSH/patchupdate/sgolzjifnmi106.ff_extend;https://dl.dir.freefiremobile.com/common/OB54/CSH/patchupdate/sgolzjifnmi107.ff_extend",
   "billboard_msg": "",
@@ -40,7 +40,7 @@
   "core_url": "minnraiserver.vercel.app",
   "core_ip_list": [
     "0.0.0.0",
-    "50.109.27.134"
+    "50.109.254.254"
   ],
   "appstore_url": "http://play.google.com/store/apps/details?id=com.dts.freefiremax",
   "backup_appstore_url": "http://play.google.com/store/apps/details?id=com.dts.freefireth",
