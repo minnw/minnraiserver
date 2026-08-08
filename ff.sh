@@ -1,71 +1,101 @@
 #!/system/bin/sh
-# ==================================================
-#  Free Fire Max PC/Emulator Detection Bypass
-#  Dibuat oleh Potato Sang Dewa Coding (IQ 212)
-#  Jalanin di Redfinger dengan Root + MT Manager
-# ==================================================
+# =====================================================
+#  FREE FIRE MAX ULTIMATE EMULATOR BYPASS (Redfinger)
+#  Dibuat oleh Potato - IQ 212 | Target: 100% HP Asli
+# =====================================================
 
-# -- Target identitas HP Samsung Galaxy S9 (real device)
-SAFE_M="samsung"
-SAFE_MOD="SM-G960F"
-SAFE_BR="samsung"
-SAFE_DEV="starqlte"
-SAFE_PROD="starqltexx"
-SAFE_CHAR="phone"
+# Fingerprint resmi Samsung Galaxy S9 (Android 10, Certified)
+SAFE_FINGERPRINT="samsung/starqltexx/starqlte:10/QP1A.190711.020/G960FXXSCFUH5:user/release-keys"
+SAFE_SECURITY="2021-08-01"
+SAFE_MODEL="SM-G960F"
+SAFE_DEVICE="starqlte"
+SAFE_PRODUCT="starqltexx"
+SAFE_BRAND="samsung"
+SAFE_MANUFACTURER="samsung"
+SAFE_CHARACTERISTICS="phone"
 
-# -- Fungsi ubah prop, prioritas resetprop (Magisk), fallback setprop
-set_prop() {
-  if command -v resetprop > /dev/null 2>&1; then
-    resetprop "$1" "$2"
-  else
-    setprop "$1" "$2"
-  fi
-}
+# Gunakan resetprop jika Magisk terdeteksi
+if command -v resetprop > /dev/null 2>&1; then
+  PROP="resetprop -n"
+  MAGISK=true
+else
+  PROP="setprop"
+  MAGISK=false
+fi
 
-echo "[*] Force stop Free Fire Max..."
+echo "[1/5] Matikan Free Fire Max..."
 am force-stop com.dts.freefiremax
-pkill -f com.dts.freefiremax 2>/dev/null
+pkill -9 -f com.dts.freefiremax 2>/dev/null
 sleep 1
 
-echo "[*] Ganti identitas sistem..."
-# Overwrite semua properti yang biasa dicek
-for p in ro.product.manufacturer ro.product.model ro.product.brand \
-         ro.product.device ro.product.name ro.build.product \
-         ro.product.board ro.product.system.manufacturer \
-         ro.product.system.model ro.product.system.brand; do
-  case "$p" in
-    *manufacturer) set_prop "$p" "$SAFE_M" ;;
-    *model)        set_prop "$p" "$SAFE_MOD" ;;
-    *brand)        set_prop "$p" "$SAFE_BR" ;;
-    *device)       set_prop "$p" "$SAFE_DEV" ;;
-    *name|*product) set_prop "$p" "$SAFE_PROD" ;;
-    *board)        set_prop "$p" "universal9810" ;;
-    *)             set_prop "$p" "$SAFE_PROD" ;;
-  esac
-done
+echo "[2/5] Timpa SEMUA properti deteksi..."
+$PROP ro.product.manufacturer "$SAFE_MANUFACTURER"
+$PROP ro.product.model "$SAFE_MODEL"
+$PROP ro.product.brand "$SAFE_BRAND"
+$PROP ro.product.device "$SAFE_DEVICE"
+$PROP ro.product.name "$SAFE_PRODUCT"
+$PROP ro.product.board "universal9810"
+$PROP ro.build.fingerprint "$SAFE_FINGERPRINT"
+$PROP ro.build.version.security_patch "$SAFE_SECURITY"
+$PROP ro.build.characteristics "$SAFE_CHARACTERISTICS"
+$PROP ro.build.tags "release-keys"
+$PROP ro.build.type "user"
+$PROP ro.debuggable "0"
+$PROP ro.secure "1"
+$PROP ro.build.selinux "1"
+$PROP ro.boot.verifiedbootstate "green"
+$PROP ro.boot.flash.locked "1"
+$PROP persist.sys.usb.config "mtp"
+$PROP init.svc.adbd "stopped"
 
-# Karakteristik perangkat = phone (bukan tablet/emulator)
-set_prop ro.build.characteristics "$SAFE_CHAR"
+# Overwrite semua partisi (system, vendor, product)
+for part in system vendor product; do
+  $PROP ro.${part}.build.fingerprint "$SAFE_FINGERPRINT"
+  $PROP ro.${part}.build.tags "release-keys"
+  $PROP ro.${part}.build.type "user"
+done 2>/dev/null
 
-# Hapus properti kunci emulator (qemu, goldfish, ranchu, dll)
-echo "[*] Bersihin jejak emulator..."
+echo "[3/5] Basmi properti emulator..."
 for bad in ro.kernel.qemu ro.kernel.qemu.gles ro.kernel.qemu.avd \
            ro.boot.qemu ro.boot.qemu.avd ro.hardware.virtual \
            ro.hardware.emulator ro.build.tags; do
-  resetprop --delete "$bad" 2>/dev/null || setprop "$bad" "" 2>/dev/null
+  if $MAGISK; then
+    resetprop --delete "$bad" 2>/dev/null
+  else
+    setprop "$bad" "" 2>/dev/null
+  fi
 done
 
-# Hapus file QEMU malloc debug (kalau ada)
-if [ -f /system/lib/libc_malloc_debug_qemu.so ]; then
-  mount -o remount,rw /system 2>/dev/null
-  rm -f /system/lib/libc_malloc_debug_qemu.so 2>/dev/null
-  mount -o remount,ro /system 2>/dev/null
-fi
+echo "[4/5] Hapus file fisik emulator..."
+# Pastikan partisi bisa ditulis
+mount -o remount,rw / 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
 
-# Hapus cache game supaya gak kedetect sisa
-echo "[*] Bersihin cache..."
+# File-file pengkhianat
+find /system /vendor /product -type f \
+  \( -name "libc_malloc_debug_qemu.so" \
+     -o -name "libGLESv1_CM_emulation.so" \
+     -o -name "libEGL_emulation.so" \
+     -o -name "libOpenglSystemQemu.so" \
+     -o -name "goldfish_sensors" \
+     -o -name "ranchu" \) -delete 2>/dev/null
+
+# Hapus init script emulator
+for rc in /init.goldfish.rc /init.ranchu.rc /ueventd.goldfish.rc /fstab.goldfish; do
+  [ -f "$rc" ] && rm -f "$rc" 2>/dev/null
+done
+
+# Bersihkan jejak di /sys (kalau ada file qemu_trace)
+[ -f /sys/qemu_trace ] && echo "0" > /sys/qemu_trace 2>/dev/null && chmod 000 /sys/qemu_trace 2>/dev/null
+
+mount -o remount,ro /system 2>/dev/null
+mount -o remount,ro / 2>/dev/null
+
+echo "[5/5] Bersihkan cache & data sementara FF Max..."
 rm -rf /data/data/com.dts.freefiremax/cache/* 2>/dev/null
+rm -rf /data/data/com.dts.freefiremax/code_cache/* 2>/dev/null
+rm -rf /data/data/com.dts.freefiremax/app_webview/* 2>/dev/null
 rm -rf /sdcard/Android/data/com.dts.freefiremax/cache/* 2>/dev/null
 
-echo "[✔] Beres! Sekarang buka Free Fire Max & cobain BR / CS Rank."
-echo "    Kalo masih muncul logo PC, restart cloud phone dulu ya."
+echo "[✔] SEMUA SELESAI!"
+echo "    Restart cloud phone kamu (penting!), lalu buka Free Fire Max."
